@@ -1,21 +1,18 @@
-class Chef():
-    """
-    A class representing a Chef.
-    Attrs:
-        __name (str): The name of the chef. 
-    """
-    def __init__(self, name: str):
-        """
-        Initializes the Chef class.
-        Args:
-            name (str): The name of the chef. 
-        """
-        self.__name = name
+"""
+Description: 
+Author: ACE Faculty
+Edited by: Amandeep Singh
+Date: 20-10-2024
+"""
+
+from patterns.observer import Observer
+
+class Chef(Observer):
+    def __init__(self, name):
+        self.name = name
 
     def __str__(self):
-        """
-        Returns a string representation of a Chef instance.
-        returns:
-            string: A string representation of a Chef instance.
-        """
-        return f"Chef: {self.__name} is currently employed at the Restaurant."
+        return f"Chef: {self.name}"
+
+    def update(self, message):
+        print(f"Message to chef {self.name}: {message}")

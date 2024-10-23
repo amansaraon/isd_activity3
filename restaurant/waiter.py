@@ -1,21 +1,18 @@
-class Waiter():
-    """
-    A class representing a Waiter.
-    Attrs:
-        __name (str): The name of the waiter. 
-    """
-    def __init__(self, name: str):
-        """
-        Initializes the Waiter class.
-        Args:
-            name (str): The name of the waiter. 
-        """
-        self.__name = name
+"""
+Description: 
+Author: ACE Faculty
+Edited by: Amandeep Singh
+Date: 20-10-2024
+"""
+
+from patterns.observer import Observer
+
+class Waiter(Observer):
+    def __init__(self, name):
+        self.name = name
 
     def __str__(self):
-        """
-        Returns a string representation of a Waiter instance.
-        returns:
-            string: A string representation of a Waiter instance.
-        """
-        return f"Waiter: {self.__name} is currently on duty."
+        return f"Waiter: {self.name}"
+
+    def update(self, message):
+        print(f"Message to waiter {self.name}: {message}")

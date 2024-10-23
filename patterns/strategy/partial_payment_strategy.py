@@ -1,3 +1,10 @@
+"""
+Description: 
+Author: ACE Faculty
+Edited by: Amandeep Singh
+Date: 20-10-2024
+"""
+
 from patterns.strategy.payment_strategy import PaymentStrategy
 from payee.payee import Payee
 from billing_account.billing_account import BillingAccount

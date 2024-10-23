@@ -1,3 +1,10 @@
+"""
+Description: The BillingAccount class manages utility bill balances, allowing for adding, deducting, and retrieving balances for different payees.
+Author: ACE Faculty
+Edited by: Amandeep Singh
+Date: 20-10-2024
+"""
+
 from payee.payee import Payee
 
 class BillingAccount():

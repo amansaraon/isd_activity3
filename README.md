@@ -4,7 +4,7 @@ This activity will help to reinforce learning of the Module 3 concepts of:
 - Design Patterns
 
 ## Author
-[Your name]
+[Amandeep Singh]
 
 ## Additional Information
 [ Use this space to include additional information that may help in your learning. ]

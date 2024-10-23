@@ -10,6 +10,9 @@ from payee.payee import Payee
 from payment.payment import Payment
 from patterns.strategy.penalty_strategy import PenaltyStrategy
 from patterns.strategy.partial_payment_strategy import PartialPaymentStrategy
+from restaurant.chef import Chef
+from restaurant.waiter import Waiter
+from restaurant.restaurant import Restaurant
 
 def strategy():
     print("STRATEGY PATTERN OUTPUT")
@@ -67,35 +70,49 @@ def strategy():
     print("\nUpdated Balances:")
     print(account)
 
-# def observer():
-#     print("OBSERVER PATTERN OUTPUT")
+def observer():
+    print("OBSERVER PATTERN OUTPUT")
+    
     # 1. Create a Restaurant object.
-   
+    restaurant = Restaurant()
 
-    #2. Create two Chef objects with names of your choice.
-    
-    
-    #3. Create two Waiter objects with names of your choice.
-    
+    # 2. Create two Chef objects with names of your choice.
+    chef_1 = Chef("Navaan Sandhu")
+    chef_2 = Chef("Prem Dhillon")
 
-    #4. Print each of the Chef and Waiter objects.
+    # 3. Create two Waiter objects with names of your choice.
+    waiter_1 = Waiter("Arjan Dhillon")
+    waiter_2 = Waiter("Karan Aujla")
+
+    # 4. Print each of the Chef and Waiter objects.
+    print(f"Chef 1: {chef_1}")
+    print(f"Chef 2: {chef_2}")
+    print(f"Waiter 1: {waiter_1}")
+    print(f"Waiter 2: {waiter_2}\n")
+
+    # 5. Attach one chef (of your choice) as a restaurant observer.
+    restaurant.attach(chef_1)
+
+    # 6. Attach one waiter (of your choice) as a restaurant observer.
+    restaurant.attach(waiter_1)
+
+    # 7. Add the following events:
+    #    - New dish added to the menu: Grilled Cheese Sandwich.
+    #    - Special promotion on desserts.
+    #    - We are out of tomatoes!
     
+    print("Event: New dish added to the menu: Grilled Cheese Sandwich.")
+    restaurant.event("New dish added to the menu: Grilled Cheese Sandwich.")
 
-    #5. Attach one chef (of your choice) as a restaurant observer.
-    
+    print("\nEvent: Special promotion on desserts.")
+    restaurant.event("Special promotion on desserts.")
 
-    #6. Attach one waiter (of your choice) as a restaurant observer.
-    
+    print("\nEvent: We are out of tomatoes!")
+    restaurant.event("We are out of tomatoes!")
 
-    #7. Add the following events:
-    #   New dish added to the menu: Grilled Cheese Sandwich.
-    #   Special promotion on desserts.
-    #   We are out of tomatoes!
-    # When the program executes, note who receives notification of the events
-    # and who does not receive notification.
-
+    # Note: Only chef_1 and waiter_1 receive notifications as they were the ones attached.
 
 if __name__ == "__main__":
     strategy()
     print("************************************")
- 
+    observer()
